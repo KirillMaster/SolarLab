@@ -1,14 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using DataAccessLayer.Models;
 
 namespace DataAccessLayer
 {
     public class DemoContext : DbContext
     {
+        public DemoContext() : base("DemoConnection")
+        {
+            Database.SetInitializer<DemoContext>(new DropCreateDatabaseAlways<DemoContext>());
+        }
+
+        public DemoContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+            Database.SetInitializer<DemoContext>(new DropCreateDatabaseAlways<DemoContext>());
+        }
+
+        public static DemoContext Create()
+        {
+            return new DemoContext();
+        }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<File> Files { get; set; }
+
+        public DbSet<Task> Tasks { get; set; }
 
     }
 }
