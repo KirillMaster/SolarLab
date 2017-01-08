@@ -22,7 +22,6 @@ namespace DataAccessLayer
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<File> Files { get; set; }
-
         public DbSet<AppTask> Tasks { get; set; }
 
     }

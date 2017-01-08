@@ -20,13 +20,18 @@ namespace DataAccessLayer.Models
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Прикрепленный файл
+        /// Прикрепленные файлы
         /// </summary>
-        public virtual File File { get; set; }
+        public virtual List<File> Files { get; set; }
         
         /// <summary>
         /// Описание документа
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Пользователи, которым рассылается документ
+        /// </summary>
+        public virtual List<ApplicationUser> Users { get; set; }
     }
 }

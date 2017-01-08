@@ -32,6 +32,11 @@ namespace DataAccessLayer.Models
         /// </summary>
         public virtual List<AppTask> Tasks { get; set; }
 
+        /// <summary>
+        /// Список документов, которому принадлежит данный файл
+        /// </summary>
+        public virtual List<Document> Documents { get; set; }
+
 
        
     }
