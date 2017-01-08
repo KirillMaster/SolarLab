@@ -12,7 +12,7 @@ namespace MVCAdmin.Controllers
     {
         public ActionResult Index()
         {
-            var ctx = DemoContext.Create();
+            var ctx = ApplicationContext.Create();
             var test = ctx.Posts.ToList();
             
             return View();

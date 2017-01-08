@@ -30,7 +30,7 @@ namespace DataAccessLayer.Models
         /// <summary>
         /// Список задач, в которых фигурирует данный файл
         /// </summary>
-        public virtual List<Task> Tasks { get; set; }
+        public virtual List<AppTask> Tasks { get; set; }
 
 
        

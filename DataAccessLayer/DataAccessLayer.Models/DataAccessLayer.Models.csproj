@@ -60,7 +60,7 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Document.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="AppTask.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

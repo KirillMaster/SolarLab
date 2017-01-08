@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.Models
 {
-    public class Task : BaseEntity<long>
+    public class AppTask : BaseEntity<long>
     {
         public string Title { get; set; }
         public string  Description { get; set;}
