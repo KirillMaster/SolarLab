@@ -6,6 +6,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DataAccessLayer.Models
 {
+
+    /// <summary>
+    /// Модель пользователя приложения
+    /// </summary>
     public class ApplicationUser : IdentityUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -38,14 +42,9 @@ namespace DataAccessLayer.Models
         public byte[] Photo { get; set; }
 
         /// <summary>
-        /// group consist for
+        /// Сообщения пользователя
         /// </summary>
-      //  public virtual List<Group> Groups { get; set; }
-
-        /// <summary>
-        /// Owned messages
-        /// </summary>
-       // public virtual List<Message> Messages { get; set; }
+        public virtual List<Message> Messages { get; set; }
 
         /// <summary>
         /// readabel documents
@@ -53,19 +52,19 @@ namespace DataAccessLayer.Models
         public virtual List<Document> Documents { get; set; }
 
         /// <summary>
-        /// viewable posts
+        /// Посты пользователя
         /// </summary>
         public virtual List<Post> Posts { get; set; }
 
         /// <summary>
-        /// viewable tasks
+        /// Задачи пользователя
         /// </summary>
-       // public virtual List<AppTask> Tasks { get; set; }
+        public virtual List<AppTask> Tasks { get; set; }
 
         /// <summary>
-        /// Owned comments
+        /// Комментарии пользователя
         /// </summary>
-     //   public virtual List<Comment> Comments { get; set; }
+        public virtual List<Comment> Comments { get; set; }
     }
 
    

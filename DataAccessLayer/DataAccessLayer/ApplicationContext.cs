@@ -23,6 +23,11 @@ namespace DataAccessLayer
         public DbSet<Post> Posts { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<AppTask> Tasks { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+
 
     }
 }

@@ -59,9 +59,12 @@
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="AppTask.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="File.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
