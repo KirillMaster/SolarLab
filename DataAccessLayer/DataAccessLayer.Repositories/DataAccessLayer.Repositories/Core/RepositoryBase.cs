@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace DataAccessLayer.Repositories.Core
 {
-    public class RepositoryBase<T> where T :  class
+    public class RepositoryBase<T> : IRepository<T> where T :  class
     {
         protected ApplicationContext dbContext = new ApplicationContext();
         protected DbSet<T> entityContext;
@@ -16,17 +16,26 @@ namespace DataAccessLayer.Repositories.Core
         {
             entityContext = dbContext.Set<T>();
         }
-        public IEnumerable<T> Get()
-        {
-            return entityContext.AsEnumerable();
-        }
-        public IEnumerable<T> Get(Expression<Func<T, bool>> expression)
-        {
-            return entityContext.Where(expression).AsEnumerable();
-        }
+  
         public T Get(int id)
         {
             return entityContext.Find(id);
+        }
+        public T Get(Expression<Func<T, bool>> expression)
+        {
+            return entityContext.Where(expression).FirstOrDefault();
+        }
+
+  
+        IEnumerable<T> GetList()
+        {
+            return entityContext.AsEnumerable();
+        }
+
+  
+        IEnumerable<T> GetList(Expression<Func<T, bool>> predicate)
+        {
+            return entityContext.Where(predicate).AsEnumerable();
         }
         public void Add(T entity)
         {
