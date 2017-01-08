@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using DataAccessLayer.Models;
-
+using Microsoft.AspNet.Identity.EntityFramework;
 namespace DataAccessLayer
 {
-    public class DemoContext : DbContext
+    public class DemoContext : IdentityDbContext<ApplicationUser>
     {
         public DemoContext() : base("DemoConnection")
         {
@@ -20,7 +20,6 @@ namespace DataAccessLayer
             return new DemoContext();
         }
 
-        public DbSet<ApplicationUser> Users {get;set;}
         public DbSet<Post> Posts { get; set; }
         public DbSet<File> Files { get; set; }
 
